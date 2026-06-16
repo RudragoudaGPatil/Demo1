@@ -7,7 +7,7 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-// Partition: place pivot in correct spot
+// Partition: place pivot in correct position
 int partition(int arr[], int low, int high) {
     int pivot = arr[high];
     int i = low - 1;
@@ -21,20 +21,20 @@ int partition(int arr[], int low, int high) {
     return i + 1;
 }
 
-// Quick Sort (average O(n log n))
-void quickSort(int arr[], int low, int high) {
+// Recursive Quicksort
+void quicksort(int arr[], int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+        quicksort(arr, low, pi - 1);
+        quicksort(arr, pi + 1, high);
     }
 }
 
 int main() {
-    int arr[] = {29, 10, 14, 37, 13};
+    int arr[] = {29, 10, 14, 37, 13, 5, 99, 1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    quickSort(arr, 0, n - 1);
+    quicksort(arr, 0, n - 1);
 
     printf("Sorted array: ");
     for (int i = 0; i < n; i++)
