@@ -1,1 +1,3 @@
 iam develoepr 2
+I am learning Git and github
+we are now learning CI/CD
